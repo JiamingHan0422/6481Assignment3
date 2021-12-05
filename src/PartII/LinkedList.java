@@ -1,4 +1,9 @@
 package PartII;
+//-----------------------------------------------------
+//Assignment (1)
+// Zitao Wang & Jiaming Han
+//Written by: (Zitao Wang 40171434)
+//-----------------------------------------------------
 
 /**
  * Key: StudentIDentificationCode,
@@ -8,8 +13,8 @@ package PartII;
  */
 public class LinkedList {
 
-	StudentNode head;
-	StudentNode tail;
+	ListNode head;
+	ListNode tail;
 	int size;
 	public LinkedList() {
 		this.head = null;
@@ -19,7 +24,7 @@ public class LinkedList {
 	
 	public void addInList(long SIDC, String Name) {
 		
-		StudentNode node = new StudentNode(SIDC, Name);
+		ListNode node = new ListNode(SIDC, Name);
 		if(this.head == null) {
 			this.head = node;
 			this.tail = node;
@@ -27,8 +32,8 @@ public class LinkedList {
 			this.head.pre = null;
 		}
 		else {
-			StudentNode previous = null;
-			StudentNode current = head;
+			ListNode previous = null;
+			ListNode current = head;
 			while(current != null && current.getKey() < node.getKey()) {
 				
 				previous = current;
@@ -58,8 +63,8 @@ public class LinkedList {
 	
 	public void RemoveInList(long key) {
 		
-		StudentNode previous = null;
-		StudentNode current = head;
+		ListNode previous = null;
+		ListNode current = head;
 
         while(current != null && current.getKey() != key){
             previous = current;
@@ -84,7 +89,7 @@ public class LinkedList {
 	}
 	
 	public void displayContents() {
-		StudentNode node = head;
+		ListNode node = head;
 		if(head == null) {
 			//System.out.println("empty");
 		}
@@ -109,7 +114,7 @@ public class LinkedList {
 	public boolean contains(long SIDC) {
 		
 		//boolean result = false;
-		StudentNode node = head;
+		ListNode node = head;
 		if(node == null) {
 			return false;
 		}
@@ -127,7 +132,7 @@ public class LinkedList {
 	
 	public String getValueByKey(long key) {
 		
-		StudentNode node = head;
+		ListNode node = head;
 		if(node == null) {
 			return "key is invaild.";
 		}
@@ -146,9 +151,9 @@ public class LinkedList {
 		return "key is invaild.";
 	}
 	
-	public StudentNode getTargetNode(long key) {
+	public ListNode getTargetNode(long key) {
 		
-		StudentNode node = head;
+		ListNode node = head;
 		if(node == null) {
 			System.out.println("key is invaild.");
 			return null;
